@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Portfolio</title>
+
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Helvetica, sans-serif;
+}
+
+body {
+    background-color: #0d0b18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.main-portfolio-card {
+    background-color: #120f24;
+    width: 100%;
+    max-width: 820px;
+    border-radius: 24px;
+    padding: 60px 50px 50px 50px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.top-profile-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-info-left {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.salutation {
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.description-text {
+    font-size: 0.85rem;
+    color: #b0aebf;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    max-width: 420px;
+}
+
+.objective-text {
+    font-size: 0.85rem;
+    color: #b0aebf;
+    line-height: 1.6;
+    margin-top: 25px;
+    margin-bottom: 45px;
+    max-width: 440px;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 20px;
+}
+
+.contact-link-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.icon-circle {
+    width: 26px;
+    height: 26px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #120f24;
+    font-size: 0.75rem;
+}
+
+.profile-photo-right {
+    position: relative;
+    width: 250px;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oval-photo-frame {
+    width: 210px;
+    height: 310px;
+    border-radius: 105px;
+    overflow: hidden;
+    border: 3px solid #4d3395;
+    z-index: 3;
+    position: relative;
+    background-color: #221a44;
+}
+
+.oval-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bg-decor-line {
+    position: absolute;
+    border: 1px solid rgba(138, 92, 246, 0.2);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.line-1 {
+    width: 320px;
+    height: 420px;
+    top: -40px;
+    right: -60px;
+    transform: rotate(-15deg);
+}
+
+.bottom-skills-card {
+    background: linear-gradient(180deg, #5339aa 0%, #301f6b 100%);
+    border-radius: 40px;
+    padding: 40px 45px;
+    position: relative;
+    z-index: 2;
+}
+
+.skills-main-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.info-group {
+    margin-bottom: 35px;
+}
+
+.card-section-title {
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.title-with-badge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.year-badge {
+    font-size: 0.65rem;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 3px 12px;
+    border-radius: 20px;
+}
+
+.sub-text-light {
+    color: #c9bffd;
+    font-size: 0.85rem;
+}
+
+.inner-two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.inner-two-cols ul {
+    list-style: none;
+}
+
+.inner-two-cols ul li {
+    color: #c9bffd;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.software-icons-flex {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.soft-box {
+    width: 50px;
+    height: 38px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.pr-box {
+    background-color: #00005c;
+    color: #ea77ff;
+    border: 1.5px solid #ea77ff;
+}
+
+.ae-box {
+    background-color: #00005c;
+    color: #bcc2ff;
+    border: 1.5px solid #bcc2ff;
+}
+
+.ai-box {
+    background-color: #261300;
+    color: #ff9a00;
+    border: 1.5px solid #ff9a00;
+}
+
+.ps-box {
+    background-color: #001c3a;
+    color: #00c8ff;
+    border: 1.5px solid #00c8ff;
+}
+
+.skills-footer-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 30px;
+    margin-top: 10px;
+}
+
+.footer-inline-text {
+    color: #c9bffd;
+    font-size: 0.85rem;
+}
+
+.bar-divider {
+    margin: 0 15px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+
+.top-profile-section {
+    flex-direction: column-reverse;
+    gap: 30px;
+}
+
+.main-portfolio-card {
+    padding: 30px 20px;
+}
+
+.contact-links-grid,
+.skills-main-columns,
+.skills-footer-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="main-portfolio-card">
+
+<section class="top-profile-section">
+
+<div class="profile-info-left">
+
+<h1 class="main-title">À propos de moi</h1>
+
+<p class="salutation">Bonjour !</p>
+
+<p class="description-text">
+Moi c'est Manassé Sudlow Précieuse KIBOZI.
+</p>
+
+<p class="description-text">
+Je suis étudiante à l'Institut Bantu de Technologie en Data Science avec un intérêt pour l’analyse de données et le développement web.
+</p>
+
+<p class="objective-text">
+Mon objectif est de sortir de ma zone de confort afin d’apprendre et de développer mes compétences à travers cette formation et différents projets pour mieux comprendre et analyser l’univers des données.
+</p>
+
+<div class="contact-block">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="contact-links-grid">
+
+<a href="mailto:manassesudlowprecieusekibozi@gmail.com" class="contact-link-item">
+
+<span class="icon-circle">@</span>
+
+manassesudlowprecieusekibozi@gmail.com
+
+</a>
+
+<a href="tel:065928124" class="contact-link-item">
+
+<span class="icon-circle">☎</span>
+
+065928124
+
+</a>
+
+</div>
+</div>
+</div>
+
+<div class="profile-photo-right">
+
+<div class="oval-photo-frame">
+
+<img src="/images /j.jpg" alt="Photo de Manassé">
+
+</div>
+
+<div class="bg-decor-line line-1"></div>
+
+</div>
+
+</section>
+
+<section class="bottom-skills-card">
+
+<div class="skills-main-columns">
+
+<div class="skills-column">
+
+<div class="info-group">
+
+<div class="title-with-badge">
+
+<h3 class="card-section-title">Formation</h3>
+
+<span class="year-badge">2026 - Actuellement</span>
+
+</div>
+
+<p class="sub-text-light">
+Formation en Data Science à l'Institut Bantu de Technologie
+</p>
+
+</div>
+
+<div class="info-group">
+
+<h3 class="card-section-title">Compétences techniques</h3>
+
+<div class="software-icons-flex">
+
+<div class="soft-box pr-box">HTML</div>
+
+<div class="soft-box ae-box">CSS</div>
+
+
+
+<div class="soft-box ps-box">word</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="skills-column">
+
+<div class="info-group">
+
+<h3 class="card-section-title">Personnalité</h3>
+
+<div class="inner-two-cols">
+
+<ul>
+<li>Esprit d'équipe</li>
+<li>Ponctuelle</li>
+</ul>
+
+<ul>
+<li>Dynamique</li>
+<li>Créative</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="info-group">
+
+<h3 class="card-section-title">Compétences</h3>
+
+<div class="inner-two-cols">
+
+<ul>
+<li>Analyse de données</li>
+<li>Développement web</li>
+
+</ul>
+
+<ul>
+<li>HTML / CSS</li>
+
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="skills-footer-row">
+
+<div class="footer-col-item">
+
+<h3 class="card-section-title">Centre d'intérêt</h3>
+
+<p class="footer-inline-text">
+Musique <span class="bar-divider">|</span> Développement web
+</p>
+
+</div>
+
+<div class="footer-col-item">
+
+<h3 class="card-section-title">Langues</h3>
+
+<p class="footer-inline-text">
+Français <span class="bar-divider">|</span> Anglais (débutant)
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+</body>
+      </html>
